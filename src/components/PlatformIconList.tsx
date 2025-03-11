@@ -27,6 +27,7 @@ const PlatformIconList = ({ platforms }: Props) => {
     ios: MdPhoneIphone,
     web: BsGlobe,
     android: FaAndroid,
+    linux: FaLinux,
   };
   return (
     <HStack>
