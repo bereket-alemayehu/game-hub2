@@ -21,7 +21,6 @@ const SearchInput = ({ onSearch }: Props) => {
           borderRadius={20}
           placeholder="Search games..."
           variant="fillded"
-          // bg="gray.700"
         />
       </InputGroup>
     </form>
