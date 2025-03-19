@@ -2,11 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "./../App";
 import apiClient from "../services/api-client";
 import { FetchResponse } from "../services/api-client";
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import { Platform } from "./usePlatforms";
+
 export interface Game {
   name: string;
   id: number;
@@ -18,7 +15,7 @@ export interface Game {
 
 const useGames = (gameQuery: GameQuery) =>
   useQuery<FetchResponse<Game>, Error>({
-    queryKey: ["games", gameQuery],
+    queryKey: ["games", gameQuery], // here the second parameter is the dependency that this hook depends on .
     queryFn: () =>
       apiClient
         .get<FetchResponse<Game>>("/games", {
